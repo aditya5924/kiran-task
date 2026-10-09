@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee SPA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            border: 1px solid #000;
+            padding: 15px;
+            width: 250px;
+            margin-bottom: 20px;
+        }
+        input, select {
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        table {
+            border-collapse: collapse;
+            width: 500px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Add New Employee</h2>
+    <form id="empForm">
+        <label>Employee ID:</label>
+        <input type="text" id="id" placeholder="Enter ID">
+
+        <label>Name:</label>
+        <input type="text" id="name" placeholder="Enter Name">
+
+        <label>Role:</label>
+        <select id="role">
+            <option value="Manager">Manager</option>
+            <option value="Developer">Developer</option>
+            <option value="Tester">Tester</option>
+        </select>
+
+        <label>Salary:</label>
+        <input type="text" id="salary" placeholder="Enter Salary">
+
+        <button type="button" onclick="addEmployee()">Submit</button>
+    </form>
+
+    <h2>Employee Records</h2>
+    <table id="empTable">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Salary</th>
+        </tr>
+    </table>
+
+    <script>
+        function addEmployee() {
+            var empId = document.getElementById("id").value;
+            var empName = document.getElementById("name").value;
+            var empRole = document.getElementById("role").value;
+            var empSalary = document.getElementById("salary").value;
+
+            if(empId == "" || empName == "" || empSalary == "") {
+                alert("Please fill all the boxes!");
+                return; 
+            }
+
+            var table = document.getElementById("empTable");
+            var newRow = table.insertRow(); 
+
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            var cell4 = newRow.insertCell(3);
+
+            cell1.innerHTML = empId;
+            cell2.innerHTML = empName;
+            cell3.innerHTML = empRole;
+            cell4.innerHTML = empSalary;
+
+            document.getElementById("empForm").reset();
+        }
+    </script>
+
+</body>
+</html>
