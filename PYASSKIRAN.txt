@@ -1,0 +1,26 @@
+Q1 ANS : print("hello world") 
+
+
+
+Q2 ANS : a = 10 b = 3
+print("Addition:", a + b)
+
+
+
+Q3 ANS : a = 10 b = 3
+print("Difference:", a - b)
+
+
+
+Q4 ANS : a = 10 b = 3
+print("Multiplication:", a * b)
+
+
+
+Q5 ANS : a = 10 b = 3
+print("Division:", a / b) 
+
+
+
+Q6 ANS : a = 10 b = 3
+print("Modulus:", a % b)
